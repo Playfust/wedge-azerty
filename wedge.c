@@ -45,51 +45,42 @@
     #define dbg(...)
 #endif
 
-static const struct key_map map[] = {
-    { '0', KEY_0 },
-    { '1', KEY_AMPERSAND },
-    { '2', KEY_EACUTE },
-    { '3', KEY_QUOTEDBL },
-    { '4', KEY_APOSTROPHE },
-    { '5', KEY_LEFTPAREN },
-    { '6', KEY_MINUS },
-    { '7', KEY_EGRAVE },
-    { '8', KEY_UNDERSCORE },
-    { '9', KEY_CCEDILLA },
+static const int key_map[256] = {
+    // Lettres (AZERTY physique → scancodes Linux)
+    ['A'] = KEY_Q,
+    ['B'] = KEY_B,
+    ['C'] = KEY_C,
+    ['D'] = KEY_D,
+    ['E'] = KEY_E,
+    ['F'] = KEY_F,
+    ['G'] = KEY_G,
+    ['H'] = KEY_H,
+    ['I'] = KEY_I,
+    ['J'] = KEY_J,
+    ['K'] = KEY_K,
+    ['L'] = KEY_L,
+    ['M'] = KEY_SEMICOLON,    // touche ; en QWERTY = M en AZERTY
+    ['N'] = KEY_N,
+    ['O'] = KEY_O,
+    ['P'] = KEY_P,
+    ['Q'] = KEY_A,
+    ['R'] = KEY_R,
+    ['S'] = KEY_S,
+    ['T'] = KEY_T,
+    ['U'] = KEY_U,
+    ['V'] = KEY_V,
+    ['W'] = KEY_Z,
+    ['X'] = KEY_X,
+    ['Y'] = KEY_Y,
+    ['Z'] = KEY_W,
 
-    { 'A', KEY_Q },  // A → A en AZERTY
-    { 'B', KEY_B },
-    { 'C', KEY_C },
-    { 'D', KEY_D },
-    { 'E', KEY_E },
-    { 'F', KEY_F },
-    { 'G', KEY_G },
-    { 'H', KEY_H },
-    { 'I', KEY_I },
-    { 'J', KEY_J },
-    { 'K', KEY_K },
-    { 'L', KEY_L },
-    { 'M', KEY_SEMICOLON },  // M = ; en US
-    { 'N', KEY_N },
-    { 'O', KEY_O },
-    { 'P', KEY_P },
-    { 'Q', KEY_A },  // Q → A en AZERTY
-    { 'R', KEY_R },
-    { 'S', KEY_S },
-    { 'T', KEY_T },
-    { 'U', KEY_U },
-    { 'V', KEY_V },
-    { 'W', KEY_Z }, 
-    { 'X', KEY_X },
-    { 'Y', KEY_Y },
-    { 'Z', KEY_W },
-
-    { '.', KEY_COMMA },  // . = , en AZERTY
-    { ',', KEY_SEMICOLON }, 
-    { ':', KEY_DOT }, 
-    { ' ', KEY_SPACE },
+    // Ponctuation
+    ['.'] = KEY_COMMA,        // en AZERTY . est sur la touche virgule (physique ,)
+    [','] = KEY_SEMICOLON,    // , = ;
+    [':'] = KEY_DOT,          // : = . en QWERTY
+    [';'] = KEY_M,            // ; = M en AZERTY
+    [' '] = KEY_SPACE,
 };
-
 
 
 /* mod_map : modification pour AZERTY -> mettre Shift (1) sur ASCII 48..57 (0..9) */
