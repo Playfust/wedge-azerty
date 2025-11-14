@@ -1,4 +1,4 @@
-CC=musl-gcc
+CC=gcc
 CFLAGS=-static -s -O3 -std=c99 -pedantic -Wall
 
 wedge: wedge.c
