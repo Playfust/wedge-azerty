@@ -45,41 +45,51 @@
     #define dbg(...)
 #endif
 
-int key_map[] = {
-    0, 0, 0, 0, 0, 0, 0, 0,          /* 0-7 */
-    0, 0, KEY_ENTER, 0,              /* 8-11 */
-    0, KEY_ENTER, 0, 0,              /* 12-15 */
-    0, 0, 0, 0, 0, 0, 0, 0,          /* 16-23 */
-    0, 0, 0, 0, 0, 0, 0, 0,          /* 24-31 */
-    KEY_SPACE, 0, 0, 0, 0, 0, 0, 0,  /* 32-39 */
-    0, 0, 0, 0,                      /* 40-43 */
-    KEY_COMMA, 0, KEY_DOT, 0,        /* 44-47 (46 = '.' -> KEY_DOT) */
-    KEY_0, KEY_1, KEY_2, KEY_3,      /* 48-51 */
-    KEY_4, KEY_5, KEY_6, KEY_7,      /* 52-55 */
-    KEY_8, KEY_9,                    /* 56-57 */
-    /* 58 = ':' -> on veut envoyer '.' donc KEY_DOT */
-    KEY_DOT, 0, 0, 0, 0, 0,          /* 58-63 */
-    0, KEY_A, KEY_B, KEY_C,          /* 64-67 */
-    KEY_D, KEY_E, KEY_F, KEY_G,      /* 68-71 */
-    KEY_H, KEY_I, KEY_J, KEY_K,      /* 72-75 */
-    KEY_L, KEY_M, KEY_N, KEY_O,      /* 76-79 */
-    KEY_P,
-    /* 81 = 'Q' -> remplacer par KEY_A */
-    KEY_A, KEY_R, KEY_S,             /* 80-83 : P, Q->A, R, S */
-    KEY_T, KEY_U, KEY_V, KEY_W,      /* 84-87 */
-    KEY_X, KEY_Y, KEY_Z, 0,          /* 88-91 */
-    0, 0, 0, 0,                      /* 92-95 */
-    0, KEY_A, KEY_B, KEY_C,          /* 96-99 */
-    KEY_D, KEY_E, KEY_F, KEY_G,      /* 100-103 */
-    KEY_H, KEY_I, KEY_J, KEY_K,      /* 104-107 */
-    KEY_L, KEY_M, KEY_N, KEY_O,      /* 108-111 */
-    KEY_P,
-    /* 113 = 'q' -> remplacer par KEY_A */
-    KEY_A, KEY_R, KEY_S,             /* 112-115 : P, q->A, r, s */
-    KEY_T, KEY_U, KEY_V, KEY_W,      /* 116-119 */
-    KEY_X, KEY_Y, KEY_Z, 0,          /* 120-123 */
-    0, 0, 0, 0                       /* 124-127 */
+static const struct key_map map[] = {
+    { '0', KEY_0 },
+    { '1', KEY_AMPERSAND },
+    { '2', KEY_EACUTE },
+    { '3', KEY_QUOTEDBL },
+    { '4', KEY_APOSTROPHE },
+    { '5', KEY_LEFTPAREN },
+    { '6', KEY_MINUS },
+    { '7', KEY_EGRAVE },
+    { '8', KEY_UNDERSCORE },
+    { '9', KEY_CCEDILLA },
+
+    { 'A', KEY_Q },  // A → A en AZERTY
+    { 'B', KEY_B },
+    { 'C', KEY_C },
+    { 'D', KEY_D },
+    { 'E', KEY_E },
+    { 'F', KEY_F },
+    { 'G', KEY_G },
+    { 'H', KEY_H },
+    { 'I', KEY_I },
+    { 'J', KEY_J },
+    { 'K', KEY_K },
+    { 'L', KEY_L },
+    { 'M', KEY_SEMICOLON },  // M = ; en US
+    { 'N', KEY_N },
+    { 'O', KEY_O },
+    { 'P', KEY_P },
+    { 'Q', KEY_A },  // Q → A en AZERTY
+    { 'R', KEY_R },
+    { 'S', KEY_S },
+    { 'T', KEY_T },
+    { 'U', KEY_U },
+    { 'V', KEY_V },
+    { 'W', KEY_Z }, 
+    { 'X', KEY_X },
+    { 'Y', KEY_Y },
+    { 'Z', KEY_W },
+
+    { '.', KEY_COMMA },  // . = , en AZERTY
+    { ',', KEY_SEMICOLON }, 
+    { ':', KEY_DOT }, 
+    { ' ', KEY_SPACE },
 };
+
 
 
 /* mod_map : modification pour AZERTY -> mettre Shift (1) sur ASCII 48..57 (0..9) */
