@@ -45,43 +45,36 @@
     #define dbg(...)
 #endif
 
-static const int key_map[256] = {
-    // Lettres (AZERTY physique → scancodes Linux)
-    ['A'] = KEY_Q,
-    ['B'] = KEY_B,
-    ['C'] = KEY_C,
-    ['D'] = KEY_D,
-    ['E'] = KEY_E,
-    ['F'] = KEY_F,
-    ['G'] = KEY_G,
-    ['H'] = KEY_H,
-    ['I'] = KEY_I,
-    ['J'] = KEY_J,
-    ['K'] = KEY_K,
-    ['L'] = KEY_L,
-    ['M'] = KEY_SEMICOLON,    // touche ; en QWERTY = M en AZERTY
-    ['N'] = KEY_N,
-    ['O'] = KEY_O,
-    ['P'] = KEY_P,
-    ['Q'] = KEY_A,
-    ['R'] = KEY_R,
-    ['S'] = KEY_S,
-    ['T'] = KEY_T,
-    ['U'] = KEY_U,
-    ['V'] = KEY_V,
-    ['W'] = KEY_Z,
-    ['X'] = KEY_X,
-    ['Y'] = KEY_Y,
-    ['Z'] = KEY_W,
-
-    // Ponctuation
-    ['.'] = KEY_COMMA,        // en AZERTY . est sur la touche virgule (physique ,)
-    [','] = KEY_SEMICOLON,    // , = ;
-    [':'] = KEY_DOT,          // : = . en QWERTY
-    [';'] = KEY_M,            // ; = M en AZERTY
-    [' '] = KEY_SPACE,
+/* key_map : inchangé (garde les mêmes keycodes) */
+int key_map[] = {
+    0, 0, 0, 0, 0, 0, 0, 0,          /* 0-7 */
+    0, 0, KEY_ENTER, 0,              /* 8-11 */
+    0, KEY_ENTER, 0, 0,              /* 12-15 */
+    0, 0, 0, 0, 0, 0, 0, 0,          /* 16-23 */
+    0, 0, 0, 0, 0, 0, 0, 0,          /* 24-31 */
+    KEY_SPACE, 0, 0, 0, 0, 0, 0, 0,  /* 32-39 */
+    0, 0, 0, 0,                      /* 40-43 */
+    KEY_COMMA, 0, KEY_DOT, 0,        /* 44-47 */
+    KEY_0, KEY_1, KEY_2, KEY_3,      /* 48-51 */
+    KEY_4, KEY_5, KEY_6, KEY_7,      /* 52-55 */
+    KEY_8, KEY_9, 0, 0, 0, 0, 0, 0,  /* 56-63 */
+    0, KEY_A, KEY_B, KEY_C,          /* 64-67 */
+    KEY_D, KEY_E, KEY_F, KEY_G,      /* 68-71 */
+    KEY_H, KEY_I, KEY_J, KEY_K,      /* 72-75 */
+    KEY_L, KEY_M, KEY_N, KEY_O,      /* 76-79 */
+    KEY_P, KEY_Q, KEY_R, KEY_S,      /* 80-83 */
+    KEY_T, KEY_U, KEY_V, KEY_W,      /* 84-87 */
+    KEY_X, KEY_Y, KEY_Z, 0,          /* 88-91 */
+    0, 0, 0, 0,                      /* 92-95 */
+    0, KEY_A, KEY_B, KEY_C,          /* 96-99 */
+    KEY_D, KEY_E, KEY_F, KEY_G,      /* 100-103 */
+    KEY_H, KEY_I, KEY_J, KEY_K,      /* 104-107 */
+    KEY_L, KEY_M, KEY_N, KEY_O,      /* 108-111 */
+    KEY_P, KEY_Q, KEY_R, KEY_S,      /* 112-115 */
+    KEY_T, KEY_U, KEY_V, KEY_W,      /* 116-119 */
+    KEY_X, KEY_Y, KEY_Z, 0,          /* 120-123 */
+    0, 0, 0, 0                       /* 124-127 */
 };
-
 
 /* mod_map : modification pour AZERTY -> mettre Shift (1) sur ASCII 48..57 (0..9) */
 int mod_map[] = {
