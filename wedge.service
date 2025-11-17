@@ -6,7 +6,7 @@ Description=Configures /dev/tty_wedge and starts the wedge program on it
 
 [Service]
 Type=exec
-ExecStartPre=stty -F /dev/tty_wedge raw 57600
-ExecStart=sh -c 'wedge < /dev/tty_wedge'
+ExecStartPre=stty -F /dev/ttyUSB0 19200 cs8 -echo -echonl -icanon -iexten -ixany -aprenb -cstopb -ixon -ixoff -crtscts
+ExecStart=sh -c 'wedge < /dev/ttyUSB0'
 Restart=always
 
