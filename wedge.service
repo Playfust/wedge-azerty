@@ -7,7 +7,7 @@ After=network.target local-fs.target
 
 [Service]
 Type=simple
-ExecStartPre=stty -F /dev/ttyUSB0 19200 cs8 -echo -echonl -icanon -iexten -ixany -aprenb -cstopb -ixon -ixoff -crtscts
+ExecStartPre=stty -F /dev/ttyUSB0 19200 cs8 -echo -echonl -icanon -iexten -ixany -cstopb -ixon -ixoff -crtscts
 ExecStart=sh -c 'wedge < /dev/ttyUSB0'
 Restart=always
 RestartSec=1
